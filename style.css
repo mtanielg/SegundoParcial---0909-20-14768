@@ -1,0 +1,117 @@
+/*Le damos un porcentaje a la pantalla*/
+body, html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    padding: 20px;
+    margin: 0;
+    background-color: rgb(82, 82, 82);
+}
+
+/*Estilo*/
+.container-calculator{
+    display: block;
+    margin: 0 auto;
+    padding: 30px;
+    width: 35%;
+    height: 100%;
+    background-color: rgb(28, 31, 31);
+    box-shadow: 2px 1px 29px 6px;
+}
+
+.screen{
+    width: 100%;
+}
+
+.screen-numbers{
+    background: rgb(62, 68, 68, 0);
+    color: rgb(255, 255, 255);
+    padding: .7em;
+    width: 95%;
+    height: 40px;
+    font-size: 1.2em;
+    text-align: left;
+    border: none;
+    outline: 0;
+    border-bottom: 2px solid rgb(241, 146, 197);
+}
+
+/*Secciones de Calculadora*/
+.scientific{
+    width: 97%;
+    height: 25%;
+}
+
+.lower{
+    display: flex;
+}
+
+.number{
+    text-align: center;
+    margin: 10px;
+}
+
+.basic{
+    text-align: center;
+    margin: 10px;
+}
+
+/*Titulos*/
+.title{
+    color: rgb(255, 246, 250);
+}
+
+/*Estilo de Botones*/
+.btn-number{
+    padding: 5px;
+    color: rgb(255, 246, 250);
+    margin: 3px;
+    background: transparent;
+    border: 2px solid rgb(245, 139, 199);
+    border-radius: 70px;
+    width: 40px;
+    height: 40px;
+}
+
+.btn-del{
+    padding: 5px;
+    color: rgb(255, 246, 250);
+    background-color:rgb(255, 109, 182);
+    border: 2px solid rgb(251, 155, 206);
+    border-radius: 5px;
+    width: 90px;
+    height: 50px;
+    margin: 3px;
+}
+
+.btn-ac{
+    padding: 5px;
+    color: rgb(255, 246, 250);
+    background: transparent;
+    border: 2px solid rgb(255, 98, 182);
+    border-radius: 5px;
+    width: 90px;
+    height: 50px;
+    margin: 3px;
+}
+
+.btn-equal{
+    padding: 5px;
+    color: rgb(255, 246, 250);
+    background: transparent;
+    border: 2px solid rgb(255, 127, 195);
+    border-radius: 5px;
+    width: 180px;
+    height: 50px;
+    margin: 3px;
+}
+
+.btn-fila{
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

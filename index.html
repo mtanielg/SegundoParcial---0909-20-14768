@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Importamos el CDN de Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!--Importamos el documento CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Calculator - Segundo Parcial</title>
+</head>
+<body>
+    <!--Empezamos con la estructura de la Calculadora-->
+    <form class="container-calculator">
+        <!--Sección de Pantalla-->
+        <div class="screen">
+            <input type="text" class="screen-numbers" name="numbers" id="operation">
+        </div><br>
+
+        <h3 class="title">Cientifica</h3>
+        <!--Sección de Funciones Cientificas-->
+        <div class="scientific">
+            <div class="btn-group">
+                <input type="button" value="(" class="btn-number" onclick="numbers.value += '('">
+                <input type="button" value=")" class="btn-number" onclick="numbers.value += ')'">
+                <input type="button" value="sin" class="btn-number" onclick="numbers.value += 'sin('">
+                <input type="button" value="cos" class="btn-number" onclick="numbers.value += 'cos('">
+                <input type="button" value="tan" class="btn-number" onclick="numbers.value += 'tan('">
+                <input type="button" value="√" class="btn-number" onclick="numbers.value += 'raiz('">
+            </div>
+            <div class="btn-group">
+                <input type="button" value="^" class="btn-number" onclick="numbers.value += 'pow('">
+                <input type="button" value="," class="btn-number" onclick="numbers.value += ','">
+                <input type="button" value="%" class="btn-number" onclick="numbers.value += 'prc('">
+                <input type="button" value=" " class="btn-number">
+                <input type="button" value="log" class="btn-number" onclick="numbers.value += 'log('">
+                <input type="button" value=" " class="btn-number">
+            </div>  
+        </div><br>
+
+        <h3 class="title">Básica</h3>
+        <!--Sección de Funciones Inferiores-->
+        <div class="lower">
+            <!--Sección de Botones Numericos-->
+            <div class="number">
+                <div class="btn-group">
+                    <input type="button" value="7" class="btn-number" onclick="numbers.value += '7'">
+                    <input type="button" value="8" class="btn-number" onclick="numbers.value += '8'">
+                    <input type="button" value="9" class="btn-number" onclick="numbers.value += '9'">
+                </div>
+                <div class="btn-group">
+                    <input type="button" value="4" class="btn-number" onclick="numbers.value += '4'">
+                    <input type="button" value="5" class="btn-number" onclick="numbers.value += '5'">
+                    <input type="button" value="6" class="btn-number" onclick="numbers.value += '6'">
+                </div>
+                <div class="btn-group">
+                    <input type="button" value="1" class="btn-number" onclick="numbers.value += '1'">
+                    <input type="button" value="2" class="btn-number" onclick="numbers.value += '2'">
+                    <input type="button" value="3" class="btn-number" onclick="numbers.value += '3'">
+                </div>
+                <input type="button" value="0" class="btn-number" onclick="numbers.value += '0'">
+                <input type="button" value="." class="btn-number" onclick="numbers.value += '.'">
+            </div>
+    
+            <!--Sección de Funciones Básoicas-->
+            <div class="basic">
+                <div class="btn-group">
+                    <input type="button" value="DEL" class="btn-del" onclick="pulsada('C')">
+                    <input type="button" value="AC" class="btn-ac" onclick="erase_num()">
+                </div>
+                <div class="btn-group">
+                    <input type="button" value="±" class="btn-number" onclick="numbers.value += '±'">
+                    <input type="button" value="+" class="btn-number" onclick="numbers.value += '+'">
+                    <input type="button" value="-" class="btn-number" onclick="numbers.value += '-'">              
+                </div>
+                <div class="btn-group">
+                    <input type="button" value="*" class="btn-number" onclick="numbers.value += '*'">
+                    <input type="button" value="/" class="btn-number" onclick="numbers.value += '/'">
+                    <input type="button" value="π" class="btn-number" onclick="numbers.value += '3.141592'">
+
+                </div>
+                <input type="button" value="=" class="btn-equal" onclick="pulsada('=')">
+            </div>
+        </div>
+    </form>
+
+    <!--Agregamos un Modal con Bootstrap-->
+    <div class="btn-fila">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Datos del alumno
+        </button>
+    </div>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Datos del Alumno</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <p>Carné: <b>0909-20-14768</b>
+                    <br>Nombre completo: <b>Milca Paola Taniel González</b>
+                    <br>Fecha y hora de finalizacion: <b>18/09/2021 - 23:00</b>
+                    <br>Nota esperada segun rendimiento: <b>17 pts.</b>
+                </p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!--Importamos el documento JS-->
+    <script src="calculator.js"></script>
+</body>
+</html>
